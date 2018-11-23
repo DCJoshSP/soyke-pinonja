@@ -1,17 +1,18 @@
 def bubblesort(nums):
-    x = True
-    if x == True:
-        x = False
-        for j in range(0,len(nums)):
-            for i in range(0,len(nums) - 1 - j):
-                if nums[i] > nums[i + 1]:
-                    nums[i], nums[i + 1] = nums[i + 1], nums[i]
-                    x = True
-                #endif
-            #next
+    j = 0
+    i = 0
+    swapped = True
+    while i < (len(nums) - 1) and swapped == True:
+        swapped = False
+        for i in range(0,len(nums) - 1 - j):
+            if nums[i] > nums[i + 1]:
+                nums[i], nums[i + 1] = nums[i + 1], nums[i]
+                swapped = True
+            #endif
         #next
-    #endif
+        j = j + 1
+    #next
     return nums
 #endfunction
-nums = [1,6,4,3,8,7,9,2]
+nums = [7,5,2,7,8,9,4,1]
 print(bubblesort(nums))
