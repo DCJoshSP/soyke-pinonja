@@ -65,7 +65,11 @@ while not done:
                 speed = 0
       
     #game logic
-    y_padd = y_padd + speed
+    if y_padd == 0 and speed == -5:
+        pass
+    else:
+        y_padd = y_padd + speed
+    
     y_padd2 = y_padd2 + speed2
     
     x_val = x_val + x_direction
