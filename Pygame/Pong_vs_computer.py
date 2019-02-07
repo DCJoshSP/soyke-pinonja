@@ -24,8 +24,8 @@ clock = pygame.time.Clock()
 ball_width = 20
 x_val = 150
 y_val = 200
-x_direction = 2
-y_direction = 2
+x_direction = 4
+y_direction = 4
 padd_length = 15
 padd_width = 60
 x_padd = 0
@@ -38,6 +38,7 @@ speed = 0
 speed2 = 0
 
 font = pygame.font.SysFont("comicsansms", 30)
+
 
 
 #Game loop
@@ -77,9 +78,9 @@ while not done:
         y_direction = y_direction * -1
     elif y_val == 0:
         y_direction = y_direction * -1
-    if (13 <= x_val <= 15) and (y_padd < y_val and y_val < y_padd + 60):
+    if (12 <= x_val <= 16) and (y_padd < y_val and y_val < y_padd + 60):
         x_direction = x_direction * -1
-    if (603 <= x_val <= 625) and (y_padd2 < y_val and y_val < y_padd2 + 60):
+    if (602 <= x_val <= 626) and (y_padd2 < y_val and y_val < y_padd2 + 60):
         x_direction = x_direction * -1        
     if x_val == 0:
         x_val = 150
@@ -93,6 +94,10 @@ while not done:
         x_direction = 2
         y_direction = 2
         score = score + 1
+    if y_val > y_padd2 + 30:
+        speed2 = 3
+    elif y_val < y_padd2 + 30:
+        speed2 = -3
         
     #screen background is black
     screen.fill(BLACK)
@@ -112,7 +117,7 @@ while not done:
     pygame.display.flip()
 
     #the clock ticks over
-    clock.tick(120)
+    clock.tick(60)
 #endwhile
 pygame.quit()
     
