@@ -1,7 +1,7 @@
 class My_String():
     def __init__(self, string):
-        self.string = string
-    #end func
+        self.string = string # attribute should be a list...
+    #end public procedure
 
     def uppercase(self):
         new = []
@@ -27,10 +27,10 @@ class My_String():
             #endif
         #next i
         return new
-    #end func
+    #end public function
         
     
-    def set_char(self, char, pos):
+    def set_char(self, char, pos): # This would be much easier if attribute was a list..
         new = []
         for i in self.string:
             new.append(i)
