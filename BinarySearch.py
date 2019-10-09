@@ -1,4 +1,4 @@
-mylist = [1,2,3,4,5,6,7,8,9,10]
+mylist = [1,2,3,4,5,6,6,6,6,6,7,8,9,10]
 
 def binarysearch(aList, itemSought):
     found = False
@@ -8,6 +8,8 @@ def binarysearch(aList, itemSought):
     while first <= last and found == False:
         midpoint = (first + last) // 2
         if aList[midpoint] == itemSought:
+            while aList[midpoint - 1] == itemSought:
+                midpoint = midpoint - 1
             found = True
             index = midpoint
         else:
@@ -18,4 +20,4 @@ def binarysearch(aList, itemSought):
     return index
 
 
-print(binarysearch(mylist, 7))
+print(binarysearch(mylist, 6))
